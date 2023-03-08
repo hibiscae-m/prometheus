@@ -1,0 +1,18 @@
+# Access node's metrics protected with TLS and authentication based
+# This configuration file won't work alone but has to be import in your prometheus.yml
+
+  - job_name: "Linux_TLS_metrics"
+    static_configs:
+      - targets: [ "host:9100" ]
+    basic_auth:
+      username: "prometheus"
+      password: "REPLACE_ME"
+    scheme: https
+    tls_config:
+      insecure_skip_verify: true
+    # Relabeling "instance" to remove the ":9100" part
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: instance
+        regex: '([^:]+)(:[0-9]+)?'
+        replacement: '${1}'
