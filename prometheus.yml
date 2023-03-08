@@ -1,7 +1,7 @@
-# Access node's metrics protected with TLS and authentication based
+# Access node_exporter's metrics protected with TLS and authentication based
 # This configuration file won't work alone but has to be import in your prometheus.yml
 
-  - job_name: "Linux_TLS_metrics"
+  - job_name: "Linux_TLS_node_exporter_metrics"
     static_configs:
       - targets: [ "host:9100" ]
     basic_auth:
