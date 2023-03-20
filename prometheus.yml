@@ -1,5 +1,6 @@
 # Access node_exporter's metrics protected with TLS and authentication based
 # This configuration file won't work alone but has to be import in your prometheus.yml
+# Assuming presence of /etc/prometheus/targets.d/nodes.yml file
 
   - job_name: "Linux_TLS_node_exporter_metrics"
     file_sd_configs:
