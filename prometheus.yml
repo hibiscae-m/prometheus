@@ -2,8 +2,9 @@
 # This configuration file won't work alone but has to be import in your prometheus.yml
 
   - job_name: "Linux_TLS_node_exporter_metrics"
-    static_configs:
-      - targets: [ "host:9100" ]
+    file_sd_configs:
+      - files:
+        - '/etc/prometheus/targets.d/nodes.yml'
     basic_auth:
       username: "prometheus"
       password: "REPLACE_ME"
