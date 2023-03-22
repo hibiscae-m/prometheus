@@ -12,8 +12,8 @@
 node_exporter_version="1.5.0"
 node_exporter_release="linux-amd64"
 password_hashed='REPLACE_ME'
-cert_file='/etc/ssl/prometheus/cert.crt'
-key_file='/etc/ssl/prometheus/key.key'
+cert_file='/etc/ssl/prometheus_node_exporter/cert.crt'
+key_file='/etc/ssl/prometheus_node_exporter/key.key'
 
 # Download and install node_exporter
 cd /tmp
